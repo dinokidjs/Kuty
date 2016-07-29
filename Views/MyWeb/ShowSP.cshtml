@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Web.Models.DOTHETHAO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="/Images/hinhsanpham/@item.Anhbia" alt="" />
+                        <h2>@item.Giaban</h2>
+                        <p>@item.Tendothethao</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Cart</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    }
+
+
+

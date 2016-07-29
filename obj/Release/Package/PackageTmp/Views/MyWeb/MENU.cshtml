@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Web.Models.NHASANXUAT>
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("ShowSP","MyWeb",new { id = item.MaNSX })">@item.TenNSX</a></li>
+}
+

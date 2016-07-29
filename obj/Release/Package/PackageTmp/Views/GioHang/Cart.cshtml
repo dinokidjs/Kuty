@@ -1,0 +1,44 @@
+﻿@using Web.Models
+
+@model List<DOTHETHAO1>
+@foreach (var item in Model)
+{
+    <tr>
+        <td class="cart_description">
+            <h4><a href="">@item.MaSP</a></h4>
+        </td>
+        <td class="cart_product">
+            <a href=""><img src="~/Images/hinhsanpham/@item.AnhBia" alt=""></a>
+        </td>
+        <td class="cart_description">
+            <h4><a href="">@item.TenSP</a></h4>
+        </td>
+        @using (Html.BeginForm("Update", "GioHang", new { @iMasp = item.MaSP }))
+        {
+            <td class="cart_price">
+                <p>@item.Dongia</p>
+            </td>
+            <td>
+                <input type="number" min="1" name="txtSoluong" value="@item.Soluong" style="background-color:orange" />
+            </td>
+          
+                    <td class="cart_total">
+                        <p class="cart_total_price">@item.Thanhtien</p>
+                    </td>
+                    <td><a href="@Url.Action("Detail", "MyWeb", new { id = item.MaSP})">Chi tiết</a></td>
+                    <td>@Html.ActionLink("Xóa", "XoaHang", new { @iMasp = item.MaSP })</td>
+                    <td><input type="submit" value="Cập nhật" /></td>
+        }
+    </tr>
+}
+    <tr style="font-weight:bold ; text-align:right;color:red">
+        <td colspan="4"> Số lượng : @ViewBag.Tongsoluong </td>
+        <td colspan="5"> Tổng tiền : @String.Format("{0:0,0}", @ViewBag.TongTT) VNÐ </td>
+    </tr>
+
+
+
+
+
+
+

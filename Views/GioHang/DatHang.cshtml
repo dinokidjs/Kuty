@@ -1,0 +1,41 @@
+﻿@using Web.Models
+@model List<DOTHETHAO1>
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/Dathang.cshtml";
+}
+
+
+@{
+    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+
+}
+<table align="center">
+                                            @using (Html.BeginForm())
+                                            {
+                                                @Html.ValidationSummary(true)
+                                                <tr style="height:40px;width:60px" >                                                   
+                                                    <td>Họ tên KH: </td>
+                                                    <td style="font-weight:bold">@kh.HoTen</td>                                                   
+                                                </tr>
+                                                <tr style="height:40px;width:60px">
+                                                    <td>Địa chỉ KH: </td>
+                                                    <td style="font-weight:bold">@kh.DiachiKH</td>
+                                                </tr>
+                                                <tr style="height:40px;width:60px">
+                                                    <td>SĐT KH: </td>
+                                                    <td style="font-weight:bold">@kh.DienthoaiKH</td>
+                                                </tr>
+                                                <tr style="height:40px;width:60px">
+                                                    <td>Ngày đặt:</td>
+                                                    <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+                                                </tr>
+                                                <tr style="height:40px">
+                                                    <td></td>
+                                                    <td style="font-weight:bold">
+                                                        <input type="submit" value="ĐỒNG Ý ĐẶT HÀNG" />
+                                                    </td>
+                                                </tr>
+                                            }
+</table>

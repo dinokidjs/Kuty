@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Web.Models.Loai>
+
+@{
+
+    var dem = 0;
+    foreach (var item in Model)
+    {
+        if (dem == 0)
+        {
+            <li class="active"><a href="#@item.Tenloai" data-toggle="tab">@item.Tenloai</a></li>
+        }
+        else
+        {
+            <li><a href="#@item.Tenloai" data-toggle="tab">@item.Tenloai</a></li>
+        }
+        dem++;
+    }
+}
+
+
+
+

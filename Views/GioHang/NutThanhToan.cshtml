@@ -1,0 +1,19 @@
+﻿@using Web.Models
+@{ 
+    DONDATHANG ddh = (DONDATHANG)Session["KQDonHang"];
+}
+
+
+<form action="https://www.baokim.vn/payment/product/version11" method="get">
+    <input type="hidden" name="business" value="dinokidjs1996@gmail.com">
+    <input type="hidden" name="product_name" value="@ddh.MaDonHang">
+    <input type="hidden" name="product_price" value="@ViewBag.TongTT">
+    <input type="hidden" name="product_quantity" value="@ViewBag.TongSL">
+    <input type="hidden" name="total_amount" value="@ViewBag.TongTienPhaiTra">
+    <input type="hidden" name="url_detail" value="">
+    <input type="hidden" name="url_success" value="">
+    <input type="hidden" name="url_cancel" value="">
+    <input type="hidden" name="order_description" value="">
+    <input type="hidden" name="id" value="">
+    <input type="image" src="http://www.baokim.vn/developers/uploads/baokim_btn/thanhtoanantoan-l.png" border="0" name="submit" alt="Thanh toán an toàn với Bảo Kim !" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn">
+</form>

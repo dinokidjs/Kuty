@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Web.Models.DOTHETHAO>
+@{
+                var dem = 0;               
+                foreach (var item in Model)
+                {
+                        if (dem == 0)
+                        {
+                            if (@item.Noibat == true)
+                            {
+                                <div class="item active">
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="~/Images/hinhsanpham/@item.Anhbia" alt="" />                                                   
+                                                    <h2>@item.Giaban</h2>
+                                                    <p>@item.Tendothethao</p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Cart</a>
+                                                </div>                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                 }
+                          }
+                                    else
+                                    {
+                                        if (@item.Noibat == true)
+                                        {<div class="item">
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="~/Images/hinhsanpham/@item.Anhbia" alt="" />                                                       
+                                                        <h2>@item.Giaban</h2>
+                                                        <p>@item.Tendothethao</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            }
+                                    }
+                                 dem++;          
+        }
+
+   }
+

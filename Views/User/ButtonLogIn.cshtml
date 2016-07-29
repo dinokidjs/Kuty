@@ -1,0 +1,15 @@
+﻿@using Web.Models;
+@{
+    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+}
+
+
+@if (kh == null)
+{
+    <li><a href="@Url.Action("Login","User")">Log-In</a></li>
+}
+else
+{
+
+
+}

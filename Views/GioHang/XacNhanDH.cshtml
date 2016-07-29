@@ -1,0 +1,16 @@
+﻿@using Web.Models
+@model List<DOTHETHAO1>
+@{
+    ViewBag.Title = "XacNhanDH";
+    Layout = "~/Views/Shared/Dathang.cshtml";
+}
+
+<h2>Bạn đã đặt hàng thành công!!!Chúng tôi sẽ liên hệ với quý khách sớm nhất và giao hàng đúng hẹn</h2>
+                    @Html.Action("NutThanhToan","GioHang")
+<p>
+    @Html.ActionLink("VỀ TRANG CHỦ", "Index", "MyWeb")
+</p>
+
+
+
+

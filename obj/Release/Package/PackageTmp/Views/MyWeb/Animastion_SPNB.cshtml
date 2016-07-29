@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Web.Models.Loai>
+
+
+
+@{
+
+    foreach (var item in Model)
+    {
+        if (item.MaLoai == 1)
+        {
+            <div class="tab-pane fade active in" id="@item.Tenloai ">
+                @Html.Action("SP_NoiBat", "MyWeb", new { id = item.MaLoai })
+            </div>
+        }
+        else
+        {
+
+            <div class="tab-pane fade" id="@item.Tenloai ">
+                @Html.Action("SP_NoiBat", "MyWeb", new { id = item.MaLoai })
+            </div>
+        }
+    }
+}
+
+
+

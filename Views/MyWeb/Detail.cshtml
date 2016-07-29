@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/chitiet-sanpham.cshtml";
+}
+
+
+<div class="view-product">
+    <div class="col-sm-5">
+        <img src="~/Images/hinhsanpham/@Model.Anhbia" alt="" />
+        </div>
+    <div class="col-sm-7">
+        <div class="product-information">
+            <!--/product-information-->          
+            <h2>@Model.Tendothethao</h2>
+            <p>Web ID: 1089772</p>            
+            <span>
+                <span>@Model.Giaban</span>                
+                <a href="@Url.Action("ThemSP","GioHang",new { masp = Model.Madothethao, url = Request.Url.ToString() })" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a>
+            </span>
+            <p><b>Số lượng còn : </b>@Model.Soluongton</p>
+            <p><b>Tình trạng:</b>Mới</p>
+            <p><b>Nhãn hiệu:</b> T-STORE</p>          
+        </div><!--/product-information-->
+    </div>
+
+    </div>
+

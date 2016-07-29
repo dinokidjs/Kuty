@@ -1,0 +1,59 @@
+﻿@using Web.Models
+
+@model List<DOTHETHAO1>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/giohang.cshtml";
+}
+
+<h2 style="text-align:center;background-color:orange;color:white">THÔNG TIN GIỎ HÀNG</h2>
+    @foreach (var item in Model)
+     {
+        <tr style="text-align:center;font-weight:bold">
+            <td> @item.MaSP </td>          
+            <td><img src="/images/hinhsanpham/@item.AnhBia" /></td>
+            <td> @item.TenSP</td>
+            @using (Html.BeginForm("Update", "Giohang", new { @iMasp = item.MaSP }))
+            {
+                <td class="cart_price">
+                    <p>@item.Dongia</p>
+                </td>
+                <td>
+                    <input type="number" min="1" name="txtSoluong" value="@item.Soluong" style="background-color:orange" />
+                </td>
+
+                        <td class="cart_total">
+                            <p class="cart_total_price">@item.Thanhtien</p>
+                        </td>
+                        <td><a href="@Url.Action("Detail", "MyWeb", new { id = item.MaSP})">Chi tiết</a></td>
+                        <td>@Html.ActionLink("Xóa", "XoaHang", new { @iMasp = item.MaSP })</td>
+                        <td><input type="submit" value="Cập nhật" /></td>
+            }
+        </tr>
+
+    }
+    <tr style="font-weight:bold ; text-align:right;color:red">
+        <td colspan="4"> Số lượng : @ViewBag.Tongsoluong </td>
+        <td colspan="5"> Tổng tiền : @String.Format("{0:0,0}", @ViewBag.TongTT) VNÐ </td>
+    </tr>
+    <tr style="font-weight:bold; color:blueviolet ; text-align:right">
+        <td colspan="9">
+            @Html.ActionLink("Xóa tất cả", "XoaAll")
+        </td>
+    </tr>
+    <tr style="font-weight:bold; color:blueviolet ; text-align:right">
+        <td colspan="9">
+            @Html.ActionLink("Đặt hàng", "DatHang","GioHang")
+        </td>
+    </tr>
+    <tr style="font-weight:bold; color:blueviolet ; text-align:right">
+        <td colspan="6">
+            @Html.ActionLink("Trở về giỏ hàng", "Giohang","GioHang")
+        </td>
+    </tr>
+
+    
+
+
+

@@ -1,0 +1,29 @@
+﻿
+
+@using (Html.BeginForm())
+{
+    <div style="align-content:center">
+        @Html.ValidationSummary()
+        <h2 style="color:red">@ViewData["ThanhCong"]</h2>
+        <h4 style="color:red">@ViewData["Loihoten"]</h4>
+        <input name="HoTen" type="text" placeholder="Họ tên" />
+        <h4 style="color:red">@ViewData["Loitaikhoan"]</h4>
+        <input name="Taikhoan" type="text" placeholder="Tài khoản" />
+        <h4 style="color:red">@ViewData["Loimatkhau"]</h4>
+        <input name="Matkhau" type="password" placeholder="Mật khẩu" />
+        <h4 style="color:red">@ViewData["Loinhaplaimk"]</h4>
+        <input name="Email" type="email" placeholder="Email Address" />
+        <h4 style="color:red">@ViewData["Loidiachikh"]</h4>
+        <input name="DiachiKH" type="text" placeholder="Địa chỉ" />
+        <h4 style="color:red">@ViewData["Loidienthoaikh"]</h4>
+        <input name="DienthoaiKH" type="text" placeholder="Điện thoại" />
+        <h4 style="color:red">@ViewData["Loingaysinh"]</h4>
+        <input name="Ngaysinh" type="date" placeholder="Ngày sinh" />
+        <button type="submit" class="btn btn-default"><h4 style="color:orangered">Đăng ký</h4></button><br />
+
+    </div>
+}
+
+
+
+

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Web.Models.DOTHETHAO>
+
+
+@foreach (var item in Model)
+{
+    if (@item.Noibat == true)
+    {
+
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="~/Images/hinhsanpham/@item.Anhbia" alt="" />
+                            <h2>@item.Giaban</h2>
+                            <p>@item.Tendothethao</p>
+                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+    }
+}
+
